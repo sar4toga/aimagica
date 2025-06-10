@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AImagica - AI Art Prompt Generator</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    color: white;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
+  }
+  p.tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    opacity: 0.85;
+  }
+  #prompt-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    background: #fff;
+    color: #8e2de2;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 10px #b278ff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:hover {
+    background: #8e2de2;
+    color: white;
+  }
+  #ads {
+    margin-top: 3rem;
+    max-width: 600px;
+    width: 100%;
+    min-height: 90px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  footer {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.5;
+  }
+  @media (max-width: 500px) {
+    h1 { font-size: 2.2rem; }
+    #prompt-box { font-size: 1.1rem; }
+    button { font-size: 1.1rem; padding: 0.6rem 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>AImagica</h1>
+<p class="tagline">Your Daily Dose of Inspiring AI Art Prompts</p>
+
+<div id="prompt-box">Click the button to generate an AI art prompt!</div>
+<button id="generate-btn">Generate Prompt</button>
+
+<div id="ads">Your ad goes here — paste your ad code inside this box</div>
+
+<footer>© 2025 AImagica. Created for AI Art lovers.</footer>
+
+<script>
+  const prompts = [
+    "A cyborg fox in a neon jungle, cinematic lighting, 4K",
+    "Mystical forest with glowing flowers and floating orbs, fantasy style",
+    "Portrait of a futuristic warrior queen, hyper-realistic",
+    "A serene landscape of a floating island in the clouds, pastel colors",
+    "A robot and a cat playing chess in a cyberpunk cafe",
+    "An astronaut discovering an ancient alien temple on Mars",
+    "Surreal cityscape with giant clock towers and flying cars",
+    "A magical library with books flying around and glowing runes",
+    "A dragon made of water soaring through stormy skies",
+    "A vintage steam-powered mech in a post-apocalyptic wasteland"
+  ];
+
+  const promptBox = document.getElementById('prompt-box');
+  const generateBtn = document.getElementById('generate-btn');
+
+  generateBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    promptBox.textContent = prompts[randomIndex];
+  });
+</script>
+
+</body>
+</html>
